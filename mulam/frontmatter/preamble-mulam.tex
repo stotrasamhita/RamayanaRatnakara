@@ -1,9 +1,12 @@
 % !TeX program = XeLaTeX
-% !TeX root = ./ramayana-sangraha-mulam.tex
+% !TeX root = ../ramayana-ratnakara-mulam.tex
 \usepackage{shloka}
 \usepackage{wallpaper}
+\usepackage{charter,fbb}
 
 \setmainfont[Script=Devanagari]{Sanskrit 2003}
+\setromanfont{fbb}
+\setsansfont{fbb}
 
 %%% HEADERS and FOOTERS %%%
 \usepackage{fancyhdr}
@@ -56,7 +59,7 @@
 \setlength{\columnsep}{30pt}
 
 %%% HYPERLINKS %%%
-\usepackage[a5paper,bookmarks=true,bookmarksopen=true,xetex,colorlinks=true,
+\usepackage[bookmarks=true,bookmarksopen=true,xetex,colorlinks=true,
 linkcolor=black,					% colour of internal links
 citecolor=cyan,					% colour of links to bibliography
 filecolor=magenta,			% colour of file links
@@ -69,3 +72,79 @@ urlcolor=black					% colour of external links
 \hfuzz=6pt
 %\listfiles
 
+%% MACROS
+\usepackage{fontawesome5} % Requires xelatex or lualatex
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
+
+\newcommand{\src}[4]{%
+  \def\sourceText{#1}%
+  \def\sourceKanda{#2}%
+  \def\sourceChapter{#3}%
+  \def\sourceVerses{#4}%
+  \def\fullSource{\sourceText}%
+  \ifx\hfuzz\sourceKanda\hfuzz\else
+    \edef\fullSource{\fullSource / \sourceKanda}%
+  \fi
+  \ifx\hfuzz\sourceChapter\hfuzz\else
+    \edef\fullSource{\fullSource / \sourceChapter}%
+  \fi
+  \ifx\hfuzz\sourceVerses\hfuzz\else
+    \edef\fullSource{\fullSource / \sourceVerses}%
+  \fi
+}
+
+\newcommand{\vakta}[1]{\def\vaktaName{#1}}
+\newcommand{\shrota}[1]{\def\shrotaName{#1}}
+\newcommand{\tags}[1]{\def\tagList{#1}}
+\newcommand{\notes}[1]{\def\storyNotes{#1}}
+\newcommand{\textlink}[1]{\def\textURL{#1}}
+\newcommand{\translink}[1]{\def\transURL{#1}}
+
+
+\newtcolorbox{StoryMetadataBox}{
+  enhanced,
+  drop small lifted shadow=red,
+  breakable,
+  colback=gray!5,
+  colframe=gray!5,
+  fonttitle=\bfseries,
+  % title=\faBookOpen\quad Story Metadata,
+  % coltitle=black,
+  % sharp corners,
+  % boxrule=0.5pt,
+  left=1em, right=1em, top=0.5em, bottom=0.5em,
+}
+
+\newcommand{\storymeta}{
+\begin{StoryMetadataBox}
+  \small
+\begin{description}
+  \item[\faBook]\textbf{\fullSource}
+  \ifx\vaktaName\empty \else \item[\faUser\ ~वक्ता ---] \vaktaName\fi
+\hspace{2em}\ifx\shrotaName\empty \else \faUserFriends\ श्रोता --- \shrotaName\fi
+  % \item[\faCommentDots\ \sffamily\small\footnotesize~Notes:] \textsf{\footnotesize\storyNotes}
+  \item[\faCommentDots\sffamily\small\footnotesize]\textsf{\footnotesize\storyNotes}
+  % \item[\faTags]\hspace{-0.4ex}\tagList
+  \ifx\textURL\empty \else\item[\faLink\ Text:] \url{\textURL} \fi
+  \ifx\transURL\empty \else\item[\faGlobe\ Translation:] \url{\transURL} \fi
+\end{description}
+\end{StoryMetadataBox}
+}
+
+\renewcommand{\chapt}[1]{%
+\chapter[#1]{\fontspec[FakeBold=1.0,FakeStretch=1.0,Script=Devanagari,Mapping=tex-text]{Sanskrit 2003}॥#1॥}%
+
+\def\sourceText{}
+\def\sourceKanda{}
+\def\sourceChapter{}
+\def\sourceVerses{}
+\def\fullSource{}
+\def\vaktaName{}
+\def\shrotaName{}
+\def\tagList{}
+\def\storyNotes{}
+\def\textURL{}
+\def\transURL{}
+
+}
