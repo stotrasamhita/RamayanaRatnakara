@@ -1,6 +1,7 @@
 % !TeX root = ./ramayana-sangraha-mulam.tex
 %! Tex program = latexmk -xelatex
 \documentclass[twoside,12pt]{book}
+\usepackage{emptypage}
 \usepackage{etoolbox}
 \newbool{kindle}
 \newbool{print}
@@ -13,61 +14,68 @@
 \begin{document}
 \input{frontmatter/cover-mulam}
 \input{frontmatter/preface-mulam}
-
+\cleardoublepage
+\thispagestyle{empty}
 \ifbool{print}{%Margin changes for print
 \addtolength{\evensidemargin}{-0.5cm}
 \addtolength{\oddsidemargin}{0.5cm}}{}
+\setmainfont[Script=Devanagari]{Adobe Devanagari}
 
-%\large
-\Large
-\setmainfont{Sanskrit 2003:script=deva}
-\cleardoublepage
 \setcounter{page}{0}
 \pagenumbering{arabic}
 \sectionmark{\mbox{}}
 \clearpage
+% \fontsize{14.4pt}{18pt}\selectfont
+\fontsize{16pt}{19.2pt}\selectfont
+% \Large
 \begin{center}
     \part{विस्तृत-राम-चरितानि}
-    \input{valmiki-ramayanam/SankshepaRamayanam.tex}
-    \input{valmiki-ramayanam/KavyaSankshepa.tex}
-    \input{valmiki-ramayanam/RamavrttaSamshrava.tex}
-    \input{valmiki-ramayanam/HanumajjanakiSamvada.tex}
-    \input{valmiki-ramayanam/Hanumadupadesha.tex}
-    \input{valmiki-ramayanam/HanumadBharataSambhashanam.tex}
-    \input{valmiki-ramayanam/GayatriRamayanam.tex}
-    \input{adhyatma-ramayanam/RamaHrdayam.tex}
-    \input{adhyatma-ramayanam/HanumatSitaSamvada.tex}
-    \input{bhagavatam/bhagavatam-09-10.tex}
-    \input{bhagavatam/bhagavatam-09-11.tex}
-    \input{narayaniyam/dashakam-34.tex}
-    \input{narayaniyam/dashakam-35.tex}
-    \input{mahabharatam/RamaAvatara.tex}
-    \input{mahabharatam/ramopakhyanaparva.tex}
-    \input{mahabharatam/HanumadBhimaSamvada.tex}
-    \input{mahabharatam/NaradaSrinjayaSamvada.tex}
-    \input{devi-bhagavatam/RamacharitaVarnanam.tex}
-    \input{devi-bhagavatam/LakshmanaKrtaRamaShokaSantvanam.tex}
-    \input{devi-bhagavatam/RamayaDeviVaradanam.tex}
-    \input{agni-puranam/ramavatara-varnanam.tex}
-    \input{kurma-puranam/ikshvaku-vamsha-varnanam.tex}
-    \input{garuda-puranam/ramayana-varnanam.tex}
-    \input{narasimha-puranam/rama-pradurbhava.tex}
-    \input{shiva-puranam/rameshvara-mahatmyam.tex}
-    \input{saura-puranam/ikshvaku-vamsha-nrpa-kathanam.tex}
+    \input{valmiki-ramayanam/SankshepaRamayanam}
+    \input{valmiki-ramayanam/KavyaSankshepa}
+    \input{valmiki-ramayanam/RamavrttaSamshrava}
+    \input{valmiki-ramayanam/HanumajjanakiSamvada}
+    \input{valmiki-ramayanam/Hanumadupadesha}
+    \input{valmiki-ramayanam/HanumadBharataSambhashanam}
+    \input{valmiki-ramayanam/GayatriRamayanam}
+    \input{adhyatma-ramayanam/RamaHrdayam}
+    \input{adhyatma-ramayanam/HanumatSitaSamvada}
+    \input{bhagavatam/bhagavatam-09-10}
+    \input{bhagavatam/bhagavatam-09-11}
+    \input{narayaniyam/dashakam-34}
+    \input{narayaniyam/dashakam-35}
+    \input{mahabharatam/RamaAvatara}
+    \input{mahabharatam/ramopakhyanaparva}
+    \input{mahabharatam/HanumadBhimaSamvada}
+    \input{mahabharatam/NaradaSrinjayaSamvada}
+    \input{devi-bhagavatam/RamacharitaVarnanam}
+    \input{devi-bhagavatam/LakshmanaKrtaRamaShokaSantvanam}
+    \input{devi-bhagavatam/RamayaDeviVaradanam}
+    \input{agni-puranam/ramavatara-varnanam}
+    \input{kurma-puranam/ikshvaku-vamsha-varnanam}
+    \input{garuda-puranam/ramayana-varnanam}
+    \input{narasimha-puranam/rama-pradurbhava}
+    \input{brahma-puranam/ananta-vasudeva-mahatmyam}
+    \input{brahma-puranam/vishnorpradurbhava}
+    \input{shiva-puranam/rameshvara-mahatmyam}
+    \input{saura-puranam/ikshvaku-vamsha-nrpa-kathanam}
+    
     \part{रामायणान्तर्गताः कथाः}
-    \input{devi-bhagavatam/VedavatiCharitram.tex}
+    \input{devi-bhagavatam/VedavatiCharitram}
+    \input{brahma-puranam/rama-tirtha}
+    \input{brahma-puranam/sahasra-kunda-tirtha}
+    \input{padma-puranam/markandeya-ashrama-darshanam}
     \part{अनुबन्धाः}
-    \input{valmiki-ramayanam/NamaRamayanam.tex}
-    \input{valmiki-ramayanam/RamayanaDhyanam.tex}
-    \input{valmiki-ramayanam/RamayanaMangalaShloka.tex}
+    \input{valmiki-ramayanam/NamaRamayanam}
+    \input{valmiki-ramayanam/RamayanaDhyanam}
+    \input{valmiki-ramayanam/RamayanaMangalaShloka}
     \begingroup
     % \let\chapt\sect
-    \input{../../namavali-manjari/100/Rama_108.tex}
-    \input{../../namavali-manjari/100/Sita_108.tex}
-    \input{../../namavali-manjari/100/Anjaneya_108.tex}
-    \input{../../namavali-manjari/100/Rama_Ramarahasya_108.tex}
-    \input{../../namavali-manjari/100/Sita_Ramarahasya_108.tex}
-    \input{../../namavali-manjari/100/Anjaneya_Ramarahasya_108.tex}
+    \input{../../namavali-manjari/100/Rama_108}
+    \input{../../namavali-manjari/100/Sita_108}
+    \input{../../namavali-manjari/100/Anjaneya_108}
+    \input{../../namavali-manjari/100/Rama_Ramarahasya_108}
+    \input{../../namavali-manjari/100/Sita_Ramarahasya_108}
+    \input{../../namavali-manjari/100/Anjaneya_Ramarahasya_108}
     \endgroup
     
 \end{center}
