@@ -1,4 +1,4 @@
-% !TeX root = ./ramayana-sangraha-mulam.tex
+% !TeX root = ./ramayana-sangraha-mulam
 %! Tex program = latexmk -xelatex
 \documentclass[twoside,12pt]{book}
 \usepackage{emptypage}
@@ -29,7 +29,7 @@
 \fontsize{16pt}{19.2pt}\selectfont
 % \Large
 \begin{center}
-    \part{विस्तृत-राम-चरितानि}
+    \part{राम-चरितानि}
     \input{valmiki-ramayanam/SankshepaRamayanam}
     \input{valmiki-ramayanam/KavyaSankshepa}
     \input{valmiki-ramayanam/RamavrttaSamshrava}
@@ -54,6 +54,9 @@
     \input{kurma-puranam/ikshvaku-vamsha-varnanam}
     \input{garuda-puranam/ramayana-varnanam}
     \input{narasimha-puranam/rama-pradurbhava}
+    \chapt{पद्म-पुराणम्}
+    \input{padma-puranam/pura-kalpa-ramayana-varnanam}
+    \input{padma-puranam/ramayana-varnanam}
     \input{brahma-puranam/ananta-vasudeva-mahatmyam}
     \input{brahma-puranam/vishnorpradurbhava}
     \input{shiva-puranam/rameshvara-mahatmyam}
@@ -64,12 +67,18 @@
     \input{brahma-puranam/rama-tirtha}
     \input{brahma-puranam/sahasra-kunda-tirtha}
     \input{padma-puranam/markandeya-ashrama-darshanam}
+    \input{padma-puranam/shudra-tapasa-vadha}
+    \input{padma-puranam/rama-agastya-samvada}
+    \input{padma-puranam/yajna-nivaranam}
+    \input{padma-puranam/vamana-prathishtha}
+    \input{padma-puranam/rama-ashvamedha-prakaranam}
+    
     \part{अनुबन्धाः}
+    \begingroup
+    \let\chapt\sect
     \input{valmiki-ramayanam/NamaRamayanam}
     \input{valmiki-ramayanam/RamayanaDhyanam}
     \input{valmiki-ramayanam/RamayanaMangalaShloka}
-    \begingroup
-    % \let\chapt\sect
     \input{../../namavali-manjari/100/Rama_108}
     \input{../../namavali-manjari/100/Sita_108}
     \input{../../namavali-manjari/100/Anjaneya_108}
