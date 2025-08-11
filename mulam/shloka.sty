@@ -436,7 +436,7 @@
 
 \newcommand{\chapt}[1]{%
 %\chapter[#1]{\fontspec[FakeBold=1.0,FakeStretch=1.0,Script=Devanagari,Mapping=tex-text]{Siddhanta}॥#1॥}%
-\chapter[#1]{\fontspec[FakeBold=1.0,FakeStretch=1.0,Script=Devanagari,Mapping=tex-text]{Sanskrit 2003}॥#1॥}%
+\chapter[#1]{\fontspec[FakeBold=1.0,FakeStretch=1.0,Script=Devanagari,Mapping=tex-text]{Adobe Devanagari}#1}%
 }
 
 \let\origclearpage\clearpage
@@ -449,11 +449,14 @@
   {\pagestyle{empty}\origdoublepage}%
 }
 
-\newcommand{\dnsub}[1]{
-\medskip
-\centerline{\parbox{\linewidth}{\Large\fontspec[FakeBold=1.0,FakeStretch=1.08,Script=Devanagari,Mapping=tex-text]{Sanskrit 2003} ॥#1॥ }}\nopagebreak[4]
-%\centerline{\Large\fontspec[FakeBold=1.0,FakeStretch=1.2,Script=Devanagari,Mapping=tex-text]{Siddhanta} ॥#1॥ }\nopagebreak[4]
-\smallskip
+\newcommand{\dnsub}[1]{%
+  \medskip
+  \begin{center}
+    {\Large\fontspec[FakeBold=1.0,FakeStretch=1.08,Script=Devanagari,Mapping=tex-text]{Sanskrit 2003}%
+    ॥#1॥}
+  \end{center}%
+  \nopagebreak[4]%
+  \smallskip
 }
 
 \newcommand{\uvacha}[1]{
