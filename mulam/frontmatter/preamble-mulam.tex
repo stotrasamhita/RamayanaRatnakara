@@ -116,6 +116,12 @@ urlcolor=black					% colour of external links
   left=1em, right=1em, top=0.5em, bottom=0.5em,
 }
 
+\def\extractdomain#1://#2/#3\enddomain{#2}
+
+\def\domainfromurl#1{%
+  \expandafter\extractdomain#1/\enddomain
+}
+
 \newcommand{\storymeta}{
 \begin{StoryMetadataBox}
   \small
@@ -126,14 +132,11 @@ urlcolor=black					% colour of external links
   % \item[\faCommentDots\ \sffamily\small\footnotesize~Notes:] \textsf{\footnotesize\storyNotes}
   \item[\faCommentDots\sffamily\small\footnotesize]\textsf{\footnotesize\storyNotes}
   % \item[\faTags]\hspace{-0.4ex}\tagList
-  \ifx\textURL\empty \else\item[\faLink] \href{\textURL}{Source Text} \fi
-  \ifx\transURL\empty \else\item[\faGlobe\ Translation:] \url{\transURL} \fi
+  \ifx\textURL\empty \else\item[\faLink] \href{\textURL}{Source Text from \domainfromurl{\textURL}} \fi
+  \ifx\transURL\empty \else\item[\faGlobe] \href{\transURL}{Translation: \domainfromurl{\transURL}} \fi
 \end{description}
 \end{StoryMetadataBox}
 }
-
-\renewcommand{\chapt}[1]{%
-\chapter[#1]{\fontspec[FakeBold=1.0,FakeStretch=1.0,Script=Devanagari,Mapping=tex-text]{Sanskrit 2003}॥#1॥}%
 
 \def\sourceText{}
 \def\sourceKanda{}
@@ -146,5 +149,3 @@ urlcolor=black					% colour of external links
 \def\storyNotes{}
 \def\textURL{}
 \def\transURL{}
-
-}
