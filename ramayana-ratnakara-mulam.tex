@@ -1,0 +1,125 @@
+% !TeX root = ./ramayana-sangraha-mulam
+%! Tex program = latexmk -xelatex
+\documentclass[twoside,12pt]{book}
+\usepackage{emptypage}
+\usepackage{etoolbox}
+\newbool{kindle}
+\newbool{print}
+\setbool{kindle}{false}
+\setbool{print}{false}
+\ifbool{kindle}{\usepackage[paperwidth=126mm,paperheight=168mm,left=5mm,right=5mm,top=15mm,bottom=20mm]{geometry}}{\usepackage[top=1.5cm, bottom=1.8cm, left=1.5cm, right=1.5cm,paperwidth=148mm,paperheight=210mm]{geometry}}
+
+\input{frontmatter/preamble-mulam}
+
+\begin{document}
+\input{frontmatter/cover-mulam}
+\input{frontmatter/preface-mulam}
+\cleardoublepage
+\thispagestyle{empty}
+\ifbool{print}{%Margin changes for print
+\addtolength{\evensidemargin}{-0.5cm}
+\addtolength{\oddsidemargin}{0.5cm}}{}
+\setmainfont[Script=Devanagari]{Adobe Devanagari}
+
+\setcounter{page}{0}
+\pagenumbering{arabic}
+\sectionmark{\mbox{}}
+\clearpage
+% \fontsize{14.4pt}{18pt}\selectfont
+\fontsize{16pt}{19.2pt}\selectfont
+% \Large
+\begin{center}
+    \part{राम-चरितानि}
+    \input{rama-charitam/valmiki-ramayanam/SankshepaRamayanam}
+    \input{rama-charitam/valmiki-ramayanam/KavyaSankshepa}
+    \input{rama-charitam/valmiki-ramayanam/RamavrttaSamshrava}
+    \input{rama-charitam/valmiki-ramayanam/HanumajjanakiSamvada}
+    \input{rama-charitam/valmiki-ramayanam/Hanumadupadesha}
+    \input{rama-charitam/valmiki-ramayanam/HanumadBharataSambhashanam}
+    \input{rama-charitam/valmiki-ramayanam/GayatriRamayanam}
+    \input{rama-charitam/adhyatma-ramayanam/RamaHrdayam}
+    \input{rama-charitam/adhyatma-ramayanam/HanumatSitaSamvada}
+    \input{rama-charitam/bhagavatam/bhagavatam-09-10}
+    \input{rama-charitam/bhagavatam/bhagavatam-09-11}
+    \input{rama-charitam/narayaniyam/dashakam-34}
+    \input{rama-charitam/narayaniyam/dashakam-35}
+    \input{rama-charitam/mahabharatam/RamaAvatara}
+    \input{rama-charitam/mahabharatam/ramopakhyanaparva}
+    \input{rama-charitam/mahabharatam/HanumadBhimaSamvada}
+    \input{rama-charitam/mahabharatam/NaradaSrinjayaSamvada}
+    \input{rama-charitam/devi-bhagavatam/RamacharitaVarnanam}
+    \input{rama-charitam/devi-bhagavatam/LakshmanaKrtaRamaShokaSantvanam}
+    \input{rama-charitam/devi-bhagavatam/RamayaDeviVaradanam}
+    \input{rama-charitam/agni-puranam/ramavatara-varnanam}
+    \input{rama-charitam/kurma-puranam/ikshvaku-vamsha-varnanam}
+    \input{rama-charitam/garuda-puranam/ramayana-varnanam}
+    \input{rama-charitam/narasimha-puranam/rama-pradurbhava}
+    \chapt{पद्म-पुराणम्}
+    \input{rama-charitam/padma-puranam/pura-kalpa-ramayana-varnanam}
+    \input{rama-charitam/padma-puranam/ramayana-varnanam}
+    \input{rama-charitam/brahma-puranam/ananta-vasudeva-mahatmyam}
+    \input{rama-charitam/brahma-puranam/vishnorpradurbhava}
+    \input{rama-charitam/brahmavaivarta-puranam/ramacharitam}
+    \input{rama-charitam/shiva-puranam/rameshvara-mahatmyam}
+    \chapt{स्कन्द-पुराणम्}
+    \input{rama-charitam/skanda-puranam/rama-katha-varnanam}
+    \input{rama-charitam/skanda-puranam/rama-charitram}
+    \input{rama-charitam/skanda-puranam/vamanena-ramavatara-kathanam}
+    \input{rama-charitam/saura-puranam/ikshvaku-vamsha-nrpa-kathanam}
+    \input{rama-charitam/vishnu-puranam/vishnu-puranam-ramayanam}
+    \input{rama-charitam/harivamsha/ramakatha}
+    \input{rama-charitam/naradiya-puranam/lakshmanachala-mahatmayam}
+    
+    \part{रामायणान्तर्गताः कथाः}
+    \input{katha/devi-bhagavatam/VedavatiCharitram}
+    \input{katha/naradiya-puranam/hanumaccharitram}
+    \input{katha/brahma-puranam/rama-tirtha}
+    \input{katha/brahma-puranam/sahasra-kunda-tirtha}
+    \input{katha/brahmavaivarta-puranam/vedavati-katha}
+    \input{katha/padma-puranam/markandeya-ashrama-darshanam}
+    \input{katha/padma-puranam/shudra-tapasa-vadha}
+    \input{katha/padma-puranam/rama-agastya-samvada}
+    \input{katha/padma-puranam/yajna-nivaranam}
+    \input{katha/padma-puranam/vamana-prathishtha}
+    \input{katha/padma-puranam/rama-ashvamedha-prakaranam}
+    \input{katha/vishnudharmottara-puranam/bharata-prasthana}
+    \input{katha/shiva-puranam/rama-pariksha}
+    \chapt{स्कन्द-पुराणम्}
+    \input{katha/skanda-puranam/setu-nirmanam}
+    \input{katha/skanda-puranam/ramanatha-linga-pratishtha}
+    \input{katha/skanda-puranam/dharmaranya-jirnoddharanam}
+    \input{katha/skanda-puranam/hanumatkeshvara-mahatmyam}
+    \input{katha/skanda-puranam/hanumanteshvara-mahatmyam}
+    \input{katha/skanda-puranam/hatakeshvara-mahatmyam}
+    \input{katha/skanda-puranam/rameshvara-kshetra-mahatmyam}
+    \input{katha/skanda-puranam/lakshmaneshvara-mahatmyam}
+    \input{katha/skanda-puranam/janakiishvara-mahatmyam}
+    \input{katha/skanda-puranam/dasharatheshvara-mahatmyam}
+
+    \part{रामायणान्तर्गत-स्तोत्राणि}
+    \chapt{स्कन्द-पुराणम्}
+    \input{stotram/skanda-puranam/rama-stotram.tex}
+
+
+    
+    \part{अनुबन्धाः}
+    \begingroup
+    \let\chapt\sect
+    \input{stotram/NamaRamayanam}
+    \input{anubandha/valmiki-ramayanam/RamayanaDhyanam}
+    \input{anubandha/valmiki-ramayanam/RamayanaMangalaShloka}
+    \input{../namavali-manjari/100/Rama_108}
+    \input{../namavali-manjari/100/Sita_108}
+    \input{../namavali-manjari/100/Anjaneya_108}
+    \input{../namavali-manjari/100/Rama_Ramarahasya_108}
+    \input{../namavali-manjari/100/Sita_Ramarahasya_108}
+    \input{../namavali-manjari/100/Anjaneya_Ramarahasya_108}
+    \endgroup
+    
+\end{center}
+
+
+\newpage\mbox{}
+\clearemptydoublepage
+
+\end{document}
