@@ -83,16 +83,26 @@ urlcolor=black					% colour of external links
   \def\sourceChapter{#3}%
   \def\sourceVerses{#4}%
   \def\fullSource{\sourceText}%
-  \ifx\hfuzz\sourceKanda\hfuzz\else
+  %
+  \if\relax\detokenize{#2}\relax
+    % empty Kanda → do nothing
+  \else
     \edef\fullSource{\fullSource / \sourceKanda}%
   \fi
-  \ifx\hfuzz\sourceChapter\hfuzz\else
+  %
+  \if\relax\detokenize{#3}\relax
+    % empty Chapter → do nothing
+  \else
     \edef\fullSource{\fullSource / \sourceChapter}%
   \fi
-  \ifx\hfuzz\sourceVerses\hfuzz\else
+  %
+  \if\relax\detokenize{#4}\relax
+    % empty Verses → do nothing
+  \else
     \edef\fullSource{\fullSource / \sourceVerses}%
   \fi
 }
+
 
 \newcommand{\vakta}[1]{\def\vaktaName{#1}}
 \newcommand{\shrota}[1]{\def\shrotaName{#1}}
@@ -132,7 +142,7 @@ urlcolor=black					% colour of external links
   % \item[\faCommentDots\ \sffamily\small\footnotesize~Notes:] \textsf{\footnotesize\storyNotes}
   \item[\faCommentDots\sffamily\small\footnotesize]\textsf{\footnotesize\storyNotes}
   % \item[\faTags]\hspace{-0.4ex}\tagList
-  \ifx\textURL\empty \else\item[\faLink] \href{\textURL}{Source Text from \domainfromurl{\textURL}} \fi
+  \ifx\textURL\empty \else\item[\faLink] \href{\textURL}{Source Text: \domainfromurl{\textURL}} \fi
   \ifx\transURL\empty \else\item[\faGlobe] \href{\transURL}{Translation: \domainfromurl{\transURL}} \fi
 \end{description}
 \end{StoryMetadataBox}
