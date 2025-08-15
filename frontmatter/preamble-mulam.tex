@@ -103,6 +103,26 @@ urlcolor=black					% colour of external links
   \fi
 }
 
+\renewcommand{\src}[4]{%
+  \def\fullSource{}%
+  \def\maybeadd##1{%
+    \if\relax\detokenize{##1}\relax
+      % empty → do nothing
+    \else
+      \ifx\fullSource\empty
+        \edef\fullSource{##1}%
+      \else
+        \edef\fullSource{\fullSource\space/\space##1}%
+      \fi
+    \fi
+  }%
+  \maybeadd{#1}%
+  \maybeadd{#2}%
+  \maybeadd{#3}%
+  \maybeadd{#4}%
+}
+
+
 
 \newcommand{\vakta}[1]{\def\vaktaName{#1}}
 \newcommand{\shrota}[1]{\def\shrotaName{#1}}
