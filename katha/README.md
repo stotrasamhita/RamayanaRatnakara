@@ -32,8 +32,7 @@ by the root `ramayana-ratnakara-mulam.tex` under the book's second part.
 | | `dasharatheshvara-mahatmyam.tex` | दशरथेश्वरमाहात्म्यवर्णनम् |
 
 `skanda-puranam/` is the largest source here — ten episodes, mostly māhātmyams of the various
-liṅgas/tīrthas Rāma and his companions are said to have established around Rāmeśvaram after
-building the Setu.
+liṅgas/tīrthas Rāma and His companions established around Rāmeśvaram after building the Setu.
 
 ---
 
